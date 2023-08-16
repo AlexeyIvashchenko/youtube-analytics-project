@@ -8,10 +8,10 @@ import isodate
 
 
 # YT_API_KEY скопирован из гугла и вставлен в переменные окружения
-api_key: str = os.getenv('YT_API_KEY')
+api_key: str = os.getenv('AIzaSyD9AOcIorP6BZnUE6nV6alHpJldiO2iqFU')
 
 # создать специальный объект для работы с API
-youtube = build('youtube', 'v3', developerKey=api_key)
+youtube = build('youtube', 'v3', developerKey='AIzaSyD9AOcIorP6BZnUE6nV6alHpJldiO2iqFU')
 
 
 def printj(dict_to_print: dict) -> None:
