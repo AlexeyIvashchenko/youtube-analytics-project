@@ -1,5 +1,5 @@
 from googleapiclient.discovery import build
-
+import json
 
 class Channel:
     """Класс для ютуб-канала"""
@@ -12,5 +12,5 @@ class Channel:
         """Выводит в консоль информацию о канале."""
         youtube = build('youtube', 'v3', developerKey='AIzaSyD9AOcIorP6BZnUE6nV6alHpJldiO2iqFU')
         channel = youtube.channels().list(id=self.channel_id, part='snippet,statistics').execute()
-        print(channel)
+        print(json.dumps(channel, ensure_ascii=False, indent=4))
 
