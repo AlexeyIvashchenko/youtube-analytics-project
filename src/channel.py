@@ -16,6 +16,30 @@ class Channel:
         self.view_count = None
         self.get_channel_info()
 
+    def __str__(self):
+        return f'{self.title} ({self.url})'
+
+    def __add__(self, other):
+        return self.subscriber_count + other.subscriber_count
+
+    def __sub__(self, other):
+        return self.subscriber_count - other.subscriber_count
+
+    def __lt__(self, other):
+        return self.subscriber_count < other.subscriber_count
+
+    def __le__(self, other):
+        return self.subscriber_count <= other.subscriber_count
+
+    def __gt__(self, other):
+        return self.subscriber_count > other.subscriber_count
+
+    def __ge__(self, other):
+        return self.subscriber_count >= other.subscriber_count
+
+    def __eq__(self, other):
+        return self.subscriber_count == other.subscriber_count
+
     def print_info(self) -> None:
         """Выводит в консоль информацию о канале."""
         youtube = build('youtube', 'v3', developerKey='AIzaSyD9AOcIorP6BZnUE6nV6alHpJldiO2iqFU')
